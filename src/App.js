@@ -1,11 +1,11 @@
 
 // import './App.css';
-import Players from "./layers/players";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
     <div className="App">
-    <Players />
+    <MainContainer />
     </div>
   );
 }
