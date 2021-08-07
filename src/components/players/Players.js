@@ -14,7 +14,9 @@ function Players({allPlayes}){
        
       />
     })
-    return playerstoCard
+    return <div>
+         {playerstoCard}
+    </div> 
 
 }
 export default Players

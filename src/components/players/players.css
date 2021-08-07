@@ -1,5 +1,6 @@
 .card{
-    width: 18rem;
+    width: 10rem;
     display:inline;
     float: left;
+    margin: 7px 7px 7px;
 }
