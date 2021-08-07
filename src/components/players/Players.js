@@ -6,7 +6,8 @@ import PlayerCard from './PlayerCard';
 
 function Players({allPlayes}){
     const playerstoCard=allPlayes.map((card)=>{
-      <PlayerCard 
+      return <PlayerCard 
+       key={card.id}
        name={card.name}
        age={card.age}
        skill={card.skill}
