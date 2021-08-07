@@ -18,9 +18,19 @@ function MainContainer(){
 
     },[])
 
-return <> 
-<NavBar />
-<Players allPlayes={allPlayes}/>
-</>
+return <div>
+    <NavBar />
+<div className="row">
+    <div className="col-2">
+{/* <Series /> */}
+    </div>
+    <div className="col-8">
+<Players allPlayes={allPlayes}/> 
+    </div>
+    <div className="col-2">
+{/* <NewsBar /> */}
+    </div>
+</div>
+</div>
 }
 export default MainContainer
