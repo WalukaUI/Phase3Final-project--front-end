@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./mainContainer.css"
+import NavBar from "./navBar/NavBar"
 import Players from "./players/Players";
 
 function MainContainer(){
@@ -18,6 +19,7 @@ function MainContainer(){
     },[])
 
 return <> 
+<NavBar />
 <Players allPlayes={allPlayes}/>
 </>
 }
