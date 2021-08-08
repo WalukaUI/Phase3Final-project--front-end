@@ -3,7 +3,7 @@ import "./players.css";
 import "./PlayersCards";
 import PlayersCards from "./PlayersCards";
 
-const URL = "http://127.0.0.1:9393/";
+const URL = "http://127.0.0.1:9393";
 
 function Players() {
   const [allPlayes, setAllPlayers] = useState([]);
@@ -18,6 +18,12 @@ function Players() {
       .then((player) => setAllPlayers(player));
   }, []);
 
+  function deletePlayer(id){
+    fetch(`${URL}/players/${id}`, {method: "DELETE"})
+    const newPlayers=allPlayes.filter(person => person.id !== id)
+    setAllPlayers(newPlayers)
+  }
+
   const playerstoCard = allPlayes.map((card) => {
     return (
       <PlayersCards
@@ -26,6 +32,7 @@ function Players() {
         name={card.name}
         age={card.age}
         skill={card.skill}
+        deletePlayer={deletePlayer}
       />
     );
   });
