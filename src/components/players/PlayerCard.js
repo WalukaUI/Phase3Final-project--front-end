@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "../players/players.css"
 
 function PlayerCard({name, age, skill, id}){
 
-    return <div className="card">
+    return <div className="cardstyle">
     <img src="..." className="card-img-top" alt="..."/>
   <div className="card-body">
     <h4 className="card-title">{name}</h4>
