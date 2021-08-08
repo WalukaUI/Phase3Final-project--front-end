@@ -40,7 +40,12 @@ function MainContainer() {
           <div className="row">
             <div className="col-md-2 col-sm-2">{/* <Series /> */}</div>
             <div className="col-md-8 col-sm-10">
-              <Route exact path="/">
+               <Route exact path="/">
+               <div>
+                 <h2>home</h2>
+               </div>
+              </Route>
+              <Route exact path="/players">
                 <Players allPlayes={allPlayes} />
               </Route>
               <Route path="/players/:id">
