@@ -8,10 +8,11 @@ function Players({allPlayes}){
     const playerstoCard=allPlayes.map((card)=>{
       return <PlayerCard 
        key={card.id}
+       id={card.id}
        name={card.name}
        age={card.age}
        skill={card.skill}
-       
+   
       />
     })
     return <div>

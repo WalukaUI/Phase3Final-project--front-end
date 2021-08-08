@@ -1,10 +1,17 @@
-function PlayerCard({name, age, skill}){
+import React from 'react';
+import { Link } from "react-router-dom";
+
+function PlayerCard({name, age, skill, id}){
+
     return <div className="card">
     <img src="..." className="card-img-top" alt="..."/>
   <div className="card-body">
-    <a><h5 className="card-title">{name}</h5></a>
+    <h4 className="card-title">{name}</h4>
     <p className="card-text">{skill}</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <p className="card-text">Age: {age}</p>
+    <Link to={`/players/${id}`}>
+    <a href="#" className="btn btn-primary">More details</a>
+    </Link>
   </div>
 </div>
 }
