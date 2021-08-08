@@ -4,9 +4,11 @@ import "./mainContainer.css";
 import NavBar from "./navBar/NavBar";
 import Players from "./players/Players";
 import PlayerProfile from "./playerProfile/Player";
+import Teams from "./teams/Teams"
 
 function MainContainer() {
   const [allPlayes, setAllPlayers] = useState([]);
+  const [teams, setTeams] = useState([]);
 
   const URL = "http://127.0.0.1:9393/";
   useEffect(() => {
@@ -19,6 +21,15 @@ function MainContainer() {
       .then((player) => setAllPlayers(player));
   }, []);
 
+  useEffect(() => {
+    let getrequestOptions = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    fetch(`${URL}/teams`, getrequestOptions)
+      .then((res) => res.json())
+      .then((team) => setTeams(team));
+  }, []);
   return (
     <Router>
       <Switch>
@@ -32,6 +43,9 @@ function MainContainer() {
               </Route>
               <Route path="/players/:id">
                 <PlayerProfile />
+              </Route>
+              <Route exact path="/teams">
+                <Teams teams={teams} />
               </Route>
             </div>
             <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>
