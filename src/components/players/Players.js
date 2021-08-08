@@ -1,11 +1,11 @@
 import React from 'react';
 import "./players.css"
-import "./PlayerCard"
-import PlayerCard from './PlayerCard';
+import "./PlayersCards"
+import PlayersCards from './PlayersCards';
 
 function Players({allPlayes}){
     const playerstoCard=allPlayes.map((card)=>{
-      return <PlayerCard 
+      return <PlayersCards
        key={card.id}
        id={card.id}
        name={card.name}

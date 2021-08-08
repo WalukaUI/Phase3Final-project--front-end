@@ -5,7 +5,7 @@ import './navBar.css'
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="!#">
         CrickUSA
       </a>
       <button
@@ -24,28 +24,36 @@ function NavBar() {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             <Link to={`/`}>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="!#">
                 Home
               </a>
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={`/teams`}>
-              <a className="nav-link" href="#">
-                Teams
+            <Link to={`/players`}>
+              <a className="nav-link" href="!#">
+                All Players
               </a>
             </Link>
           </li>
           <li className="nav-item">
+            <Link to={`/teams`}>
+              <a className="nav-link" href="!#">
+                Teams
+              </a>
+            </Link>
+          </li>
+
+          <li className="nav-item">
             <Link to={`/tournaments`}>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="!#">
                 Tournaments
               </a>
             </Link>
           </li>
           <li className="nav-item">
             <Link to={`/venues`}>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="!#">
                  Venues
               </a>
             </Link>

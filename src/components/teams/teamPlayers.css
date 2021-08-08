@@ -1,0 +1,9 @@
+.cardstyle{
+    width:10rem;
+    display:inline;
+    float: left;
+    margin: 7px 7px 7px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5%;
+}

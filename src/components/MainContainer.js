@@ -3,8 +3,9 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./mainContainer.css";
 import NavBar from "./navBar/NavBar";
 import Players from "./players/Players";
-import PlayerProfile from "./playerProfile/Player";
+import PlayerProfile from "./players/playerProfile/Player";
 import Teams from "./teams/Teams"
+import TeamPlayers from "./teams/TeamPlayers"
 
 function MainContainer() {
   const [allPlayes, setAllPlayers] = useState([]);
@@ -30,6 +31,7 @@ function MainContainer() {
       .then((res) => res.json())
       .then((team) => setTeams(team));
   }, []);
+
   return (
     <Router>
       <Switch>
@@ -46,6 +48,9 @@ function MainContainer() {
               </Route>
               <Route exact path="/teams">
                 <Teams teams={teams} />
+              </Route>
+              <Route exact path="/teams/:id">
+                <TeamPlayers />
               </Route>
             </div>
             <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>
