@@ -20,25 +20,25 @@ function MainContainer() {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      <div className="row">
-        <div className="col-md-2 col-sm-2">{/* <Series /> */}</div>
-        <div className="col-md-8 col-sm-10">
-          <Router>
-            <Switch>
+    <Router>
+      <Switch>
+        <div>
+          <NavBar />
+          <div className="row">
+            <div className="col-md-2 col-sm-2">{/* <Series /> */}</div>
+            <div className="col-md-8 col-sm-10">
               <Route exact path="/">
                 <Players allPlayes={allPlayes} />
               </Route>
               <Route path="/players/:id">
-                <PlayerProfile  />
+                <PlayerProfile />
               </Route>
-            </Switch>
-          </Router>
+            </div>
+            <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>
+          </div>
         </div>
-        <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>
-      </div>
-    </div>
+      </Switch>
+    </Router>
   );
 }
 export default MainContainer;

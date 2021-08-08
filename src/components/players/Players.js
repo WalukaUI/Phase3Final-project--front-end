@@ -1,4 +1,3 @@
-
 import React from 'react';
 import "./players.css"
 import "./PlayerCard"
