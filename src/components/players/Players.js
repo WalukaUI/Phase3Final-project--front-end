@@ -1,22 +1,34 @@
-import React from 'react';
-import "./players.css"
-import "./PlayersCards"
-import PlayersCards from './PlayersCards';
+import React, { useEffect, useState } from "react";
+import "./players.css";
+import "./PlayersCards";
+import PlayersCards from "./PlayersCards";
 
-function Players({allPlayes}){
-    const playerstoCard=allPlayes.map((card)=>{
-      return <PlayersCards
-       key={card.id}
-       id={card.id}
-       name={card.name}
-       age={card.age}
-       skill={card.skill}
-   
+const URL = "http://127.0.0.1:9393/";
+
+function Players() {
+  const [allPlayes, setAllPlayers] = useState([]);
+
+  useEffect(() => {
+    let getrequestOptions = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    fetch(`${URL}/players`, getrequestOptions)
+      .then((res) => res.json())
+      .then((player) => setAllPlayers(player));
+  }, []);
+
+  const playerstoCard = allPlayes.map((card) => {
+    return (
+      <PlayersCards
+        key={card.id}
+        id={card.id}
+        name={card.name}
+        age={card.age}
+        skill={card.skill}
       />
-    })
-    return <div>
-         {playerstoCard}
-    </div> 
-
+    );
+  });
+  return <div>{playerstoCard}</div>;
 }
-export default Players
+export default Players;

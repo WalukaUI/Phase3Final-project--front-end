@@ -1,37 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./mainContainer.css";
 import NavBar from "./navBar/NavBar";
+import FrontPage from "./frontPage/FrontPage";
 import Players from "./players/Players";
 import PlayerProfile from "./players/playerProfile/Player";
-import Teams from "./teams/Teams"
-import TeamPlayers from "./teams/TeamPlayers"
+import Teams from "./teams/Teams";
+import TeamPlayers from "./teams/TeamPlayers";
 
 function MainContainer() {
-  const [allPlayes, setAllPlayers] = useState([]);
-  const [teams, setTeams] = useState([]);
-
-  const URL = "http://127.0.0.1:9393/";
-  useEffect(() => {
-    let getrequestOptions = {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    };
-    fetch(`${URL}/players`, getrequestOptions)
-      .then((res) => res.json())
-      .then((player) => setAllPlayers(player));
-  }, []);
-
-  useEffect(() => {
-    let getrequestOptions = {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    };
-    fetch(`${URL}/teams`, getrequestOptions)
-      .then((res) => res.json())
-      .then((team) => setTeams(team));
-  }, []);
-
+  
   return (
     <Router>
       <Switch>
@@ -40,19 +18,17 @@ function MainContainer() {
           <div className="row">
             <div className="col-md-2 col-sm-2">{/* <Series /> */}</div>
             <div className="col-md-8 col-sm-10">
-               <Route exact path="/">
-               <div>
-                 <h2>home</h2>
-               </div>
+              <Route exact path="/">
+                <FrontPage />
               </Route>
               <Route exact path="/players">
-                <Players allPlayes={allPlayes} />
+                <Players />
               </Route>
               <Route path="/players/:id">
                 <PlayerProfile />
               </Route>
               <Route exact path="/teams">
-                <Teams teams={teams} />
+                <Teams />
               </Route>
               <Route exact path="/teams/:id">
                 <TeamPlayers />
