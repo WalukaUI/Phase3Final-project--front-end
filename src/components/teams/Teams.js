@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./teams.css";
 import { Link } from "react-router-dom";
+import EditTeam from "./EditTeam"
 
 const URL = "http://127.0.0.1:9393/";
 function Teams() {
   const [teams, setTeams] = useState([]);
+  //---toCreateATeam--
+
   const [addaTeamForm,setaddaTeamForm]=useState(false)
   const [addTeam,setAddTeam]=useState([])
+
+  //---toUpdateTeam---
+  const[isOpen, setIsOpen]=useState(false)
+  const [updateData, setUpdateData] = useState(null)
 
   //GET TEAMS
 
@@ -43,7 +50,14 @@ function Teams() {
   }
 
   //-----------------supportive functions--------------------------
+  function updateTeam(id){
+   
+  }
 
+  function showEditTeamForm(e){
+    e.preventDefault();
+    setIsOpen(!isOpen)
+  }
   function handleDeleteTeam(id){
     deleteTeam(id);
   }
@@ -68,7 +82,7 @@ function Teams() {
 
   const allTeams = teams.map((team) => {
     const id = team.id;
-    return (
+    return <>
       <div className="card text-center">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">
@@ -90,10 +104,17 @@ function Teams() {
               All the Players of {team.name}
             </a>
           </Link>
+          <button className="btn btn-info" onClick={showEditTeamForm}>Edit Team</button>
           <button className="btn btn-warning" onClick={()=>handleDeleteTeam(team.id)}>Delete Team</button>
         </div>
       </div>
-    );
+      <EditTeam isOpen={isOpen} 
+              setIsOpen={setIsOpen} 
+              updateData={updateData} 
+              setUpdateData={setUpdateData}
+              updateTeam={updateTeam}
+              />
+      </>
   });
 
   return <div>
