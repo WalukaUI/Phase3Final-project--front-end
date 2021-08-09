@@ -28,10 +28,7 @@ function Players() {
     return (
       <PlayersCards
         key={card.id}
-        id={card.id}
-        name={card.name}
-        age={card.age}
-        skill={card.skill}
+        card={card}
         deletePlayer={deletePlayer}
       />
     );
