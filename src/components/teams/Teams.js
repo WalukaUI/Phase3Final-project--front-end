@@ -22,12 +22,12 @@ function Teams() {
 
   function deleteTeam(id) {
     fetch(`${URL}/teams/${id}`, { method: "DELETE" });
-    const newTeamList = teams.filter((team) => team.id !== id);
-    setTeams(newTeamList);
+    const newTeamsList = teams.filter((team) => team.id !== id);
+    setTeams(newTeamsList);
   }
 
   //-----------------supportive functions--------------------------
-  
+
   function handleDeleteTeam(id){
     deleteTeam(id);
     
