@@ -38,7 +38,9 @@ function MainContainer() {
                 <Tournaments />
               </Route>
             </div>
-            <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>
+            <div className="col-md-2 col-sm-12">
+            
+            </div>
           </div>
         </div>
       </Switch>

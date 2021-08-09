@@ -6,6 +6,8 @@ const URL = "http://127.0.0.1:9393/";
 function Teams() {
   const [teams, setTeams] = useState([]);
 
+  //GET TEAMS
+
   useEffect(() => {
     let getrequestOptions = {
       method: "GET",
@@ -15,6 +17,21 @@ function Teams() {
       .then((res) => res.json())
       .then((team) => setTeams(team));
   }, []);
+
+  //DElETE TEAMS
+
+  function deleteTeam(id) {
+    fetch(`${URL}/teams/${id}`, { method: "DELETE" });
+    const newTeamList = teams.filter((team) => team.id !== id);
+    setTeams(newTeamList);
+  }
+
+  //-----------------supportive functions--------------------------
+  
+  function handleDeleteTeam(id){
+    deleteTeam(id);
+    
+  }
 
   const allTeams = teams.map((team) => {
     const id = team.id;
@@ -40,6 +57,7 @@ function Teams() {
               All the Players of {team.name}
             </a>
           </Link>
+          <button className="btn btn-warning" onClick={()=>handleDeleteTeam(team.id)}>Delete Team</button>
         </div>
       </div>
     );

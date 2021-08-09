@@ -22,6 +22,8 @@ function Players() {
       .then((player) => setAllPlayers(player));
   }, []);
 
+//DELETE PlAYER
+
   function deletePlayer(id) {
     fetch(`${URL}/players/${id}`, { method: "DELETE" });
     const newPlayers = allPlayers.filter((person) => person.id !== id);
@@ -64,7 +66,7 @@ function createPlayer(newPlayerObject) {
       
 }
 
-//----------------------------------------------------------------------
+  //-----------------supportive functions--------------------------
 
   function toggleForm(e) {
     e.preventDefault();
@@ -96,7 +98,7 @@ function createPlayer(newPlayerObject) {
     <div>
       <div>
         <button
-          className={`btn btn-outline-${addplayerForm ? "danger" : "primary"}`}
+          className={`btn btn-outline-${addplayerForm ? "danger" : "info"}`}
           onClick={toggleForm}
         >
           {addplayerForm ? "Cancel" : "Add a new Player"}
