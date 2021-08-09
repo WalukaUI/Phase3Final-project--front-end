@@ -7,9 +7,10 @@ import Players from "./players/Players";
 import PlayerProfile from "./players/playerProfile/Player";
 import Teams from "./teams/Teams";
 import TeamPlayers from "./teams/TeamPlayers";
+import Tournaments from "./tournements/Tournements"
 
 function MainContainer() {
-  
+
   return (
     <Router>
       <Switch>
@@ -30,8 +31,11 @@ function MainContainer() {
               <Route exact path="/teams">
                 <Teams />
               </Route>
-              <Route exact path="/teams/:id">
+              <Route path="/teams/:id">
                 <TeamPlayers />
+              </Route>
+              <Route path="/tournaments">
+                <Tournaments />
               </Route>
             </div>
             <div className="col-md-2 col-sm-12">{/* <NewsBar /> */}</div>

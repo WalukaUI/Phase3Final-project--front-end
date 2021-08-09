@@ -51,13 +51,6 @@ function NavBar() {
               </a>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to={`/venues`}>
-              <a className="nav-link" href="!#">
-                 Venues
-              </a>
-            </Link>
-          </li>
         </ul>
 
         <form className="form-inline my-2 my-lg-0">
