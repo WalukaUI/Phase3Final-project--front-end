@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 const URL = "http://127.0.0.1:9393/";
 function Teams() {
   const [teams, setTeams] = useState([]);
+  const [addaTeamForm,setaddaTeamForm]=useState(false)
+  const [addTeam,setAddTeam]=useState([])
 
   //GET TEAMS
 
@@ -32,6 +34,19 @@ function Teams() {
     deleteTeam(id);
     
   }
+
+  function createNewTeam(e){
+    e.preventDefault();
+    setaddaTeamForm(!addaTeamForm);
+    createTeam(addTeam);
+  }
+
+  function handleAddATeam(e){
+    e.preventDefault()
+    let newTeam = { ...addTeam, [e.target.name]: e.target.value }
+    setAddTeam(newTeam)
+  }
+
 
   const allTeams = teams.map((team) => {
     const id = team.id;
@@ -63,7 +78,75 @@ function Teams() {
     );
   });
 
-  return allTeams;
+  return <div>
+    <button class="btn btn-outline-light" onClick={handleAddATeam}>Add a Team</button>
+
+    <div className={addaTeamForm ? "display" : "hidden"}>
+        <form onSubmit={createNewPlayer}>
+          <label>
+            Name
+            <input
+              className="form-control form-control-sm"
+              type="text"
+              name="name"
+              placeholder="Name"
+              onChange={handleAddPlayer}
+            />
+          </label>
+          <label>
+            Age
+            <input
+              className="form-control form-control-sm"
+              type="number"
+              name="age"
+              placeholder="Age"
+              onChange={handleAddPlayer}
+            />
+          </label>
+          <label>
+            Skill
+            <select className="form-select" name="skill" onChange={handleAddPlayer}>
+              <option value="select">Select</option>
+              <option value="Allrounder">Allrounder</option>
+              <option value="Batsman">Batsman</option>
+              <option value="Bowler">Bowler</option>
+            </select>
+          </label>
+          <label>
+            Team
+            <select className="form-select" name="team_id" onChange={handleAddPlayer}>
+              <option value="select">Select</option>
+              <option value="1">SL</option>
+              <option value="2">IND</option>
+              <option value="3">AUS</option>
+              <option value="4">PAK</option>
+            </select>
+          </label>
+          <label>
+            Selected Tournament
+            <select
+              className="form-select"
+              name="tournament_id"
+              aria-label="Default select example"
+              onChange={handleAddPlayer}
+            >
+              <option value="select">Select</option>
+              <option value="1">T20</option>
+              <option value="2">ODI</option>
+              <option value="3">TEST</option>
+            </select>
+          </label>
+          <div className="col-sm">
+            <button className=" btn btn-success" type="submit">
+              Create Player
+            </button>
+          </div>
+        </form>
+      </div>
+      
+
+    {allTeams}
+    </div>
 }
 
 export default Teams;
