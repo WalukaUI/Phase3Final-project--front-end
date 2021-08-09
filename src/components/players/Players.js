@@ -106,7 +106,7 @@ function createPlayer(newPlayerObject) {
       </div>
       <div className={addplayerForm ? "display" : "hidden"}>
         <form onSubmit={createNewPlayer}>
-          <label>
+          <label className="text-white">
             Name
             <input
               className="form-control form-control-sm"
@@ -116,7 +116,7 @@ function createPlayer(newPlayerObject) {
               onChange={handleAddPlayer}
             />
           </label>
-          <label>
+          <label className="text-white">
             Age
             <input
               className="form-control form-control-sm"
@@ -126,7 +126,7 @@ function createPlayer(newPlayerObject) {
               onChange={handleAddPlayer}
             />
           </label>
-          <label>
+          <label className="text-white">
             Skill
             <select className="form-select" name="skill" onChange={handleAddPlayer}>
               <option value="select">Select</option>
@@ -135,7 +135,7 @@ function createPlayer(newPlayerObject) {
               <option value="Bowler">Bowler</option>
             </select>
           </label>
-          <label>
+          <label className="text-white">
             Team
             <select className="form-select" name="team_id" onChange={handleAddPlayer}>
               <option value="select">Select</option>
@@ -145,8 +145,8 @@ function createPlayer(newPlayerObject) {
               <option value="4">PAK</option>
             </select>
           </label>
-          <label>
-            Selected Tournament
+          <label className="text-white">
+            Select a Tournament
             <select
               className="form-select"
               name="tournament_id"

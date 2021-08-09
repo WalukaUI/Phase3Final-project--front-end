@@ -27,12 +27,30 @@ function Teams() {
     const newTeamsList = teams.filter((team) => team.id !== id);
     setTeams(newTeamsList);
   }
+  //POST TEAM
+
+  function createTeam(teamObject){
+    fetch(`${URL}/teams`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(teamObject),
+    })
+      .then((res) => res.json())
+      .then((team) => setTeams([...teams, team]))
+  }
 
   //-----------------supportive functions--------------------------
 
   function handleDeleteTeam(id){
     deleteTeam(id);
-    
+  }
+
+  function toggleForm(e){
+    e.preventDefault();
+    setaddaTeamForm(!addaTeamForm);
   }
 
   function createNewTeam(e){
@@ -79,66 +97,37 @@ function Teams() {
   });
 
   return <div>
-    <button class="btn btn-outline-light" onClick={handleAddATeam}>Add a Team</button>
+          <button
+          className={`btn btn-outline-${addaTeamForm ? "danger" : "info"}`}
+          onClick={toggleForm}
+        >
+          {addaTeamForm ? "Cancel" : "Add a new Team"}
+        </button>
 
     <div className={addaTeamForm ? "display" : "hidden"}>
-        <form onSubmit={createNewPlayer}>
-          <label>
+        <form onSubmit={createNewTeam}>
+          <label className="text-white">
             Name
             <input
               className="form-control form-control-sm"
               type="text"
               name="name"
               placeholder="Name"
-              onChange={handleAddPlayer}
+              onChange={handleAddATeam}
             />
           </label>
-          <label>
-            Age
+          <label className="text-white">
+            Logo URL
             <input
               className="form-control form-control-sm"
-              type="number"
-              name="age"
-              placeholder="Age"
-              onChange={handleAddPlayer}
+              name="logo_url"
+              placeholder="Logo URL"
+              onChange={handleAddATeam}
             />
-          </label>
-          <label>
-            Skill
-            <select className="form-select" name="skill" onChange={handleAddPlayer}>
-              <option value="select">Select</option>
-              <option value="Allrounder">Allrounder</option>
-              <option value="Batsman">Batsman</option>
-              <option value="Bowler">Bowler</option>
-            </select>
-          </label>
-          <label>
-            Team
-            <select className="form-select" name="team_id" onChange={handleAddPlayer}>
-              <option value="select">Select</option>
-              <option value="1">SL</option>
-              <option value="2">IND</option>
-              <option value="3">AUS</option>
-              <option value="4">PAK</option>
-            </select>
-          </label>
-          <label>
-            Selected Tournament
-            <select
-              className="form-select"
-              name="tournament_id"
-              aria-label="Default select example"
-              onChange={handleAddPlayer}
-            >
-              <option value="select">Select</option>
-              <option value="1">T20</option>
-              <option value="2">ODI</option>
-              <option value="3">TEST</option>
-            </select>
           </label>
           <div className="col-sm">
             <button className=" btn btn-success" type="submit">
-              Create Player
+              Create Team
             </button>
           </div>
         </form>

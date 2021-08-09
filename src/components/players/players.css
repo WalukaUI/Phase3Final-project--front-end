@@ -6,6 +6,7 @@
     background-color: aliceblue;
     border: 1px solid black;
     border-radius: 5%;
+    opacity: 0.9;
 }
 .btn{
     margin-bottom: 5px;
