@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../players/players.css"
 import EditPlayer from './EditPlayer';
 
-function PlayersCards({card ,deletePlayer}){
+function PlayersCards({card ,deletePlayer, updatePlayer}){
   const[isOpen, setIsOpen]=useState(false)
   const [updateData, setUpdateData] = useState(null)
 
@@ -31,7 +31,13 @@ function PlayersCards({card ,deletePlayer}){
     <a  href="!#" onClick={onClickOfDelete} className="btn btn-primary">Delete</a>
   </div>
 </div>
-  <EditPlayer isOpen={isOpen} card={card} setIsOpen={setIsOpen} updateData={updateData} setUpdateData={setUpdateData}/>
+  <EditPlayer isOpen={isOpen} 
+              card={card} 
+              setIsOpen={setIsOpen} 
+              updateData={updateData} 
+              setUpdateData={setUpdateData}
+              updatePlayer={updatePlayer}
+              />
 </>
 }
 

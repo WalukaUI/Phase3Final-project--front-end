@@ -1,11 +1,11 @@
 import './EditPlayer.css'
 
-function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData }){
+function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData, updatePlayer }){
   
-    function updatePlayer(e){
+    function updatePlayerHandler(e){
         e.preventDefault()
+        updatePlayer(updateData);
         setIsOpen(!isOpen);
-        console.log(updateData);
     }
     function togglePopup(e){
         e.preventDefault()
@@ -15,7 +15,6 @@ function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData }){
         e.preventDefault()
         let newData = { ...updateData, [e.target.name]: e.target.value }
         setUpdateData(newData)
-        console.log(updateData)
     }
     if (!updateData) return null
     const editPlayer = updateData
@@ -25,7 +24,7 @@ function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData }){
         <div className="popup-box" >
             <div className="popup-inner">
                 <div className="formDiv div1">
-                    <form onSubmit={updatePlayer}>
+                    <form onSubmit={updatePlayerHandler}>
                         <h4>Update Player Details</h4>
                         <div className="form-group row">
                             <label >Name<input name="name" className="form-control form-control-sm" value={editPlayer.name} placeholder="Name" onChange={handleChangeData} /></label>
@@ -33,16 +32,16 @@ function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData }){
                             <label >Age<input name="age" type="number" className="form-control form-control-sm" value={editPlayer.age} placeholder="Description" onChange={handleChangeData} /></label>
                             <label >Playing Category
                               <select className="form-select" name="playing_category" value={updateData.playing_category} aria-label="Default select example" onChange={handleChangeData} >
-                                    <option value="331">T20</option>
-                                    <option value="333">ODI</option>
-                                    <option value="334">TEST</option>
+                                    <option value="T20">T20</option>
+                                    <option value="ODI">ODI</option>
+                                    <option value="TEST">TEST</option>
                                 </select>
                             </label>
                            
                             <div className="container">
                                 <div className="row">
                                     <div className="col-sm">
-                                        <button className=" btn btn-success"  type="submit">Update Product</button>
+                                        <button className=" btn btn-success"  type="submit">Update Player</button>
                                     </div>
                                     <div className="col-sm">
                                         <button className="btn btn-danger" onClick={togglePopup}>Cancel</button>
