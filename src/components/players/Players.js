@@ -60,8 +60,8 @@ function createPlayer(newPlayerObject) {
     body: JSON.stringify(newPlayerObject),
   })
     .then((res) => res.json())
-    .then((player) => console.log(player))
-      // setAllPlayers([...newPlayer, player]);
+    .then((player) => setAllPlayers([...allPlayers, player]))
+      
 }
 
 //----------------------------------------------------------------------
@@ -70,8 +70,9 @@ function createPlayer(newPlayerObject) {
     e.preventDefault();
     setAddPlayerForm(!addplayerForm);
   }
-  function createPlayer(e){
+  function createNewPlayer(e){
     e.preventDefault();
+    setAddPlayerForm(!addplayerForm);
     createPlayer(addPlayer);
   }
   function handleAddPlayer(e){
@@ -102,7 +103,7 @@ function createPlayer(newPlayerObject) {
         </button>
       </div>
       <div className={addplayerForm ? "display" : "hidden"}>
-        <form onSubmit={createPlayer}>
+        <form onSubmit={createNewPlayer}>
           <label>
             Name
             <input
@@ -126,6 +127,7 @@ function createPlayer(newPlayerObject) {
           <label>
             Skill
             <select className="form-select" name="skill" onChange={handleAddPlayer}>
+              <option value="select">Select</option>
               <option value="Allrounder">Allrounder</option>
               <option value="Batsman">Batsman</option>
               <option value="Bowler">Bowler</option>
@@ -133,7 +135,8 @@ function createPlayer(newPlayerObject) {
           </label>
           <label>
             Team
-            <select className="form-select" name="team" onChange={handleAddPlayer}>
+            <select className="form-select" name="team_id" onChange={handleAddPlayer}>
+              <option value="select">Select</option>
               <option value="1">SL</option>
               <option value="2">IND</option>
               <option value="3">AUS</option>
@@ -141,13 +144,14 @@ function createPlayer(newPlayerObject) {
             </select>
           </label>
           <label>
-            Playing Category
+            Selected Tournament
             <select
               className="form-select"
-              name="playing_category"
+              name="tournament_id"
               aria-label="Default select example"
               onChange={handleAddPlayer}
             >
+              <option value="select">Select</option>
               <option value="1">T20</option>
               <option value="2">ODI</option>
               <option value="3">TEST</option>
