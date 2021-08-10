@@ -2,7 +2,7 @@ import './EditTeam.css'
 
 function EditPlayer({isOpen, setIsOpen, updateData, setUpdateData, updateTeam }){
   
-    function updatePlayerHandler(e){
+    function updateTeamHandler(e){
         e.preventDefault()
         updateTeam(updateData);
         setIsOpen(!isOpen);
@@ -17,26 +17,19 @@ function EditPlayer({isOpen, setIsOpen, updateData, setUpdateData, updateTeam })
         setUpdateData(newData)
     }
     if (!updateData) return null
-    const editPlayer = updateData
+    const editTeam = updateData
 
     return (isOpen) ? (
 
         <div className="popup-box" >
             <div className="popup-inner">
                 <div className="formDiv div1">
-                    <form onSubmit={updatePlayerHandler}>
-                        <h4>Update Player Details</h4>
+                    <form onSubmit={updateTeamHandler}>
+                        <h4>Update Team Details</h4>
                         <div className="form-group row">
-                            <label >Name<input name="name" className="form-control form-control-sm" value={editPlayer.name} placeholder="Name" onChange={handleChangeData} /></label>
-                            <label >Skill<input name="skill"  className="form-control form-control-sm" value={editPlayer.skill} placeholder="Price" onChange={handleChangeData} /></label>
-                            <label >Age<input name="age" type="number" className="form-control form-control-sm" value={editPlayer.age} placeholder="Description" onChange={handleChangeData} /></label>
-                            <label >Playing Category
-                              <select className="form-select" name="playing_category" value={updateData.playing_category} aria-label="Default select example" onChange={handleChangeData} >
-                                    <option value="T20">T20</option>
-                                    <option value="ODI">ODI</option>
-                                    <option value="TEST">TEST</option>
-                                </select>
-                            </label>
+                            <label >Name<input name="name" className="form-control form-control-sm" value={editTeam.name} placeholder="Name" onChange={handleChangeData} /></label>
+                            <label >Logo URL<input name="logo_url"  className="form-control form-control-sm" value={editTeam.skill} placeholder="Logo URL" onChange={handleChangeData} /></label>
+                            
                            
                             <div className="container">
                                 <div className="row">

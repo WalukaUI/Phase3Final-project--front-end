@@ -30,7 +30,7 @@ function Players() {
     setAllPlayers(newPlayers);
   }
 
-//UPDATE PLAYER
+//PATCH PLAYER
 
   function updatePlayer(playerObject) {
     fetch(`${URL}/players/${playerObject.id}`, {

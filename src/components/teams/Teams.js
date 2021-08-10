@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./teams.css";
 import TeamCard  from "./TeamCard";
 
-
 const URL = "http://127.0.0.1:9393/";
+
 function Teams() {
+
   const [teams, setTeams] = useState([]);
   //---toCreateATeam--
 
@@ -44,16 +45,27 @@ function Teams() {
       .then((res) => res.json())
       .then((team) => setTeams([...teams, team]))
   }
+  //PATCH TEAMS
 
-  //-----------------supportive functions--------------------------
-  function updateTeam(id){
-   
+  function updateTeam(teamObject){
+    fetch(`${URL}/teams/${teamObject.id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(teamObject),
+    })
+      .then((res) => res.json())
+      .then((team) => {
+        const newTeams = teams.filter(
+          (t) => t.id !== teamObject.id
+        );
+        setTeams([...newTeams, team]);
+      });
   }
 
-
-  // function handleDeleteTeam(id){
-  //   deleteTeam(id);
-  // }
+  //-----------------supportive functions--------------------------
 
   function toggleForm(e){
     e.preventDefault();

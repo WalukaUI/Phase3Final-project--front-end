@@ -1,6 +1,6 @@
 import './EditPlayer.css'
 
-function EditPlayer({isOpen, card, setIsOpen, updateData, setUpdateData, updatePlayer }){
+function EditPlayer({isOpen, setIsOpen, updateData, setUpdateData, updatePlayer }){
   
     function updatePlayerHandler(e){
         e.preventDefault()
