@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./teams.css";
-import { Link } from "react-router-dom";
-import EditTeam from "./EditTeam"
+import TeamCard  from "./TeamCard";
+
 
 const URL = "http://127.0.0.1:9393/";
 function Teams() {
@@ -10,10 +10,6 @@ function Teams() {
 
   const [addaTeamForm,setaddaTeamForm]=useState(false)
   const [addTeam,setAddTeam]=useState([])
-
-  //---toUpdateTeam---
-  const[isOpen, setIsOpen]=useState(false)
-  const [updateData, setUpdateData] = useState(null)
 
   //GET TEAMS
 
@@ -54,13 +50,10 @@ function Teams() {
    
   }
 
-  function showEditTeamForm(e){
-    e.preventDefault();
-    setIsOpen(!isOpen)
-  }
-  function handleDeleteTeam(id){
-    deleteTeam(id);
-  }
+
+  // function handleDeleteTeam(id){
+  //   deleteTeam(id);
+  // }
 
   function toggleForm(e){
     e.preventDefault();
@@ -81,41 +74,8 @@ function Teams() {
 
 
   const allTeams = teams.map((team) => {
-    const id = team.id;
-    return <>
-      <div className="card text-center">
-        <div className="card-header">
-          <ul className="nav nav-tabs card-header-tabs">
-            <li className="nav-item">
-              <a className="nav-link active" href="!#">
-                {team.name}
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="card-body">
-          <h5 className="card-title">Team Performance</h5>
-          <p className="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <Link to={`/teams/${id}`}>
-            <a href="!#" className="btn btn-primary">
-              All the Players of {team.name}
-            </a>
-          </Link>
-          <button className="btn btn-info" onClick={showEditTeamForm}>Edit Team</button>
-          <button className="btn btn-warning" onClick={()=>handleDeleteTeam(team.id)}>Delete Team</button>
-        </div>
-      </div>
-      <EditTeam isOpen={isOpen} 
-              setIsOpen={setIsOpen} 
-              updateData={updateData} 
-              setUpdateData={setUpdateData}
-              updateTeam={updateTeam}
-              />
-      </>
-  });
+    return <TeamCard team={team} deleteTeam={deleteTeam} updateTeam={updateTeam}/>
+  })
 
   return <div>
           <button
