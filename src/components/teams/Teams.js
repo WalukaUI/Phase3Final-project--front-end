@@ -86,7 +86,7 @@ function Teams() {
 
 
   const allTeams = teams.map((team) => {
-    return <TeamCard team={team} deleteTeam={deleteTeam} updateTeam={updateTeam}/>
+    return <TeamCard key={team.id} team={team} deleteTeam={deleteTeam} updateTeam={updateTeam}/>
   })
 
   return <div>

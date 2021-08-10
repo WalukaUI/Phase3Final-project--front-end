@@ -24,14 +24,17 @@ function PlayersCards({card ,deletePlayer, updatePlayer}){
     <h4 className="card-title">{card.name}</h4>
     <p className="card-text">{card.skill}</p>
     <p className="card-text">Age: {card.age}</p>
+    <div className="btnbox">
     <Link to={`/players/${card.id}`}>
        <a href="!#" className="btn btn-primary">More details</a>
     </Link>
-    <a href="!#" onClick={onClickofEdit} className="btn btn-primary">Edit</a>
-    <a  href="!#" onClick={onClickOfDelete} className="btn btn-primary">Delete</a>
+    <a href="!#" onClick={onClickofEdit} className="btn btn-info">Edit</a>
+    <a  href="!#" onClick={onClickOfDelete} className="btn btn-warning">Delete</a>
+    </div>
   </div>
 </div>
-  <EditPlayer isOpen={isOpen} 
+  <EditPlayer isOpen={isOpen}
+              key={card.id} 
               card={card} 
               setIsOpen={setIsOpen} 
               updateData={updateData} 
