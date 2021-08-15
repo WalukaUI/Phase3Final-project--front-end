@@ -12,15 +12,15 @@ function PlayerProfile() {
       .then((r) => r.json())
       .then((data) => setsinglePlayer(data));
   }, [params.id]);
-
-  return <>
+  
+  return <> 
       <div className="row">
         <div className="col-xl-3 col-md-12 seconddiv inner1">
           <div className="m-b-25">
             <img
               src="https://img.icons8.com/bubbles/100/000000/user.png"
               className="img-radius"
-              alt="User-Profile-Image"
+              alt="User-Profile"
             />
           </div>
           <h4 className="f-w-600">{singlePlayer.name}</h4>
@@ -49,7 +49,7 @@ function PlayerProfile() {
             </div>
             <div className="col-xl-6 col-md-6 col-sm-12 logoDiv">
               <p>Team :{ singlePlayer.team}</p>
-              <img src={singlePlayer.country_logo}/>
+              <img src={singlePlayer.country_logo} alt="logo"/>
             </div>
           </div>
         </div>

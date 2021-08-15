@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./teams.css";
-import TeamCard  from "./TeamCard";
+import "./EditTeam.css";
+import TeamCard from "./TeamCard";
 
 const URL = "http://127.0.0.1:9393/";
 
 function Teams() {
-
   const [teams, setTeams] = useState([]);
   //---toCreateATeam--
 
-  const [addaTeamForm,setaddaTeamForm]=useState(false)
-  const [addTeam,setAddTeam]=useState([])
+  const [addaTeamForm, setaddaTeamForm] = useState(false);
+  const [addTeam, setAddTeam] = useState([]);
 
   //GET TEAMS
-
+  
   useEffect(() => {
     let getrequestOptions = {
       method: "GET",
@@ -33,7 +33,7 @@ function Teams() {
   }
   //POST TEAM
 
-  function createTeam(teamObject){
+  function createTeam(teamObject) {
     fetch(`${URL}/teams`, {
       method: "POST",
       headers: {
@@ -43,11 +43,11 @@ function Teams() {
       body: JSON.stringify(teamObject),
     })
       .then((res) => res.json())
-      .then((team) => setTeams([...teams, team]))
+      .then((team) => setTeams([...teams, team]));
   }
   //PATCH TEAMS
 
-  function updateTeam(teamObject){
+  function updateTeam(teamObject) {
     fetch(`${URL}/teams/${teamObject.id}`, {
       method: "PATCH",
       headers: {
@@ -58,46 +58,51 @@ function Teams() {
     })
       .then((res) => res.json())
       .then((team) => {
-        const newTeams = teams.filter(
-          (t) => t.id !== teamObject.id
-        );
+        const newTeams = teams.filter((t) => t.id !== teamObject.id);
         setTeams([...newTeams, team]);
       });
   }
 
   //-----------------supportive functions--------------------------
-
-  function toggleForm(e){
+  
+  function toggleForm(e) {
     e.preventDefault();
     setaddaTeamForm(!addaTeamForm);
   }
 
-  function createNewTeam(e){
+  function createNewTeam(e) {
     e.preventDefault();
     setaddaTeamForm(!addaTeamForm);
     createTeam(addTeam);
   }
 
-  function handleAddATeam(e){
-    e.preventDefault()
-    let newTeam = { ...addTeam, [e.target.name]: e.target.value }
-    setAddTeam(newTeam)
+  function handleAddATeam(e) {
+    e.preventDefault();
+    let newTeam = { ...addTeam, [e.target.name]: e.target.value };
+    setAddTeam(newTeam);
   }
 
-
   const allTeams = teams.map((team) => {
-    return <TeamCard key={team.id} team={team} deleteTeam={deleteTeam} updateTeam={updateTeam}/>
-  })
+    return (
+      <TeamCard
+        key={team.id}
+        team={team}
+        deleteTeam={deleteTeam}
+        updateTeam={updateTeam}
+      />
+    );
+  });
 
-  return <div>
-          <button
-          className={`btn btn-outline-${addaTeamForm ? "danger" : "info"}`}
-          onClick={toggleForm}
-        >
-          {addaTeamForm ? "Cancel" : "Add a new Team"}
-        </button>
+  return <>
+    <div>
+      <button
+        className={`btn btn-outline-${addaTeamForm ? "danger" : "info"}`}
+        onClick={toggleForm}
+      >
+        {addaTeamForm ? "Cancel" : "Add a new Team"}
+      </button>
 
-    <div className={addaTeamForm ? "display" : "hidden"}>
+      <div className={addaTeamForm ? "display" : "hidden"}>
         <form onSubmit={createNewTeam}>
           <label className="text-white">
             Name
@@ -126,9 +131,10 @@ function Teams() {
         </form>
       </div>
       
-
-    {allTeams}
+      {allTeams}
     </div>
+
+  </>
 }
 
 export default Teams;

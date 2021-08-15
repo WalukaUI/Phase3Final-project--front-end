@@ -23,32 +23,23 @@ function NavBar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link to={`/`}>
-              <a className="nav-link" href="!#">
+            <Link className="nav-link" to={`/`}>
                 Home
-              </a>
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={`/players`}>
-              <a className="nav-link" href="!#">
+            <Link className="nav-link" to={`/players`}>
                 All Players
-              </a>
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={`/teams`}>
-              <a className="nav-link" href="!#">
+            <Link  className="nav-link" to={`/teams`}>
                 Teams
-              </a>
             </Link>
           </li>
-
           <li className="nav-item">
-            <Link to={`/tournaments`}>
-              <a className="nav-link" href="!#">
+            <Link className="nav-link" to={`/tournaments`}>
                 Tournaments
-              </a>
             </Link>
           </li>
         </ul>

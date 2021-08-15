@@ -20,7 +20,7 @@ function TeamPlayers() {
         <p className="card-text">{card.skill}</p>
         <p className="card-text">Age: {card.age}</p>
         <Link to={`/players/${card.id}`}>
-    <a href="!#" className="btn btn-primary">More details</a>
+    <button className="btn btn-primary">More details</button>
     </Link>
       </div>
     </div>;

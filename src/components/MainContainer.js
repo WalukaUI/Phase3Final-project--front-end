@@ -8,6 +8,7 @@ import PlayerProfile from "./players/playerProfile/Player";
 import Teams from "./teams/Teams";
 import TeamPlayers from "./teams/TeamPlayers";
 import Tournaments from "./tournements/Tournements"
+import News from "./SportNews/News";
 
 function MainContainer() {
 
@@ -39,7 +40,7 @@ function MainContainer() {
               </Route>
             </div>
             <div className="col-md-2 col-sm-12">
-            
+               <News />
             </div>
           </div>
         </div>

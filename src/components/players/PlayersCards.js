@@ -26,10 +26,10 @@ function PlayersCards({card ,deletePlayer, updatePlayer}){
     <p className="card-text">Age: {card.age}</p>
     <div className="btnbox">
     <Link to={`/players/${card.id}`}>
-       <a href="!#" className="btn btn-primary">More details</a>
+       <button className="btn btn-primary">More details</button>
     </Link>
-    <a href="!#" onClick={onClickofEdit} className="btn btn-info">Edit</a>
-    <a  href="!#" onClick={onClickOfDelete} className="btn btn-warning">Delete</a>
+    <button onClick={onClickofEdit} className="btn btn-info">Edit</button>
+    <button onClick={onClickOfDelete} className="btn btn-warning">Delete</button>
     </div>
   </div>
 </div>

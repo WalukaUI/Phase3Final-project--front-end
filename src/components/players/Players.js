@@ -139,26 +139,22 @@ function createPlayer(newPlayerObject) {
             Team
             <select className="form-select" name="team_id" onChange={handleAddPlayer}>
               <option value="select">Select</option>
-              <option value="1">SL</option>
-              <option value="2">IND</option>
-              <option value="3">AUS</option>
-              <option value="4">PAK</option>
+              <option value="17">SL</option>
+              <option value="18">IND</option>
+              <option value="19">AUS</option>
+              <option value="20">PAK</option>
             </select>
           </label>
           <label className="text-white">
-            Select a Tournament
-            <select
-              className="form-select"
-              name="tournament_id"
-              aria-label="Default select example"
+           Image URL
+            <input
+              className="form-control form-control-sm"
+              type="text"
+              name="image_URL"
+              placeholder="Image URL"
               onChange={handleAddPlayer}
-            >
-              <option value="select">Select</option>
-              <option value="1">T20</option>
-              <option value="2">ODI</option>
-              <option value="3">TEST</option>
-            </select>
-          </label>
+            />
+            </label>
           <div className="col-sm">
             <button className=" btn btn-success" type="submit">
               Create Player
