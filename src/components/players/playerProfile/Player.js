@@ -55,8 +55,6 @@ function PlayerProfile() {
         </div>
       </div>
 
-
-
     </>
 }
 
