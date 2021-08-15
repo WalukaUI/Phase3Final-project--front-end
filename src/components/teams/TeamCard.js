@@ -40,8 +40,7 @@ function TeamCard({ team, deleteTeam, updateTeam }) {
         <div className="card-body">
           <h5 className="card-title">Team Performance</h5>
           <p className="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
+              Coming soon.....
           </p>
           <Link to={`/teams/${team.id}`}>
             <button className="btn btn-primary">

@@ -24,7 +24,7 @@ function PlayersCards({ card, deletePlayer, updatePlayer, idx }) {
   }, []);
   return (
     <>
-    <div className="grids">
+    <div className="grids" data-aos={idx>7?"fade-up":null}>
       {/* data-aos={idx>9?"fade-up":null} */}
       <div className="cardstyle">
         <div className="flip-card-inner">
