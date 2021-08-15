@@ -1,9 +1,13 @@
-
+.grids{
+    margin: auto;
+    display: inline-block;
+}
 .cardstyle{
     opacity: 0.9;
+    display: flex;
     text-align: center;
     margin: 20px;
-    margin-top: 150px;
+    /* margin-top: 150px; */
     background-color: transparent;
     height: 38vh;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,3);
@@ -61,9 +65,6 @@
 }
 .btn-success{
     margin-top: 10px;
-}
-.grids{
-    margin: auto;
 }
 .formDiv{
    margin-left: 1%;
