@@ -9,6 +9,8 @@
     height: 60vh;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,3);
     border-radius: 5%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 .btn{
     margin-bottom: 5px;

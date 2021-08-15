@@ -82,10 +82,11 @@ function Players() {
     setAddPlayer(newPlayer);
   }
 
-  const playerstoCard = allPlayers.map((card) => {
+  const playerstoCard = allPlayers.map((card,idx) => {
     return (
       <PlayersCards
         key={card.id}
+        idx={idx}
         card={card}
         deletePlayer={deletePlayer}
         updatePlayer={updatePlayer}
