@@ -1,13 +1,14 @@
+
 .cardstyle{
-    width:10rem;
-    display:inline;
-    float: left;
-    margin: 7px 7px 7px;
-    background-color: aliceblue;
-    border: 1px solid black;
-    border-radius: 5%;
     opacity: 0.9;
     text-align: center;
+    margin: 20px;
+    margin-top: 150px;
+    background-color: rgb(198,177,198);
+    overflow: hidden;
+    height: 60vh;
+    box-shadow: 0px 12px 18px -6px rgba(0,0,0,3);
+    border-radius: 5%;
 }
 .btn{
     margin-bottom: 5px;
@@ -30,3 +31,18 @@
 .btn-success{
     margin-top: 10px;
 }
+.grids{
+    margin: auto;
+}
+.formDiv{
+   margin-left: 1%;
+}
+/* .card-img-top{
+    border-radius: 50%;
+} */
+@media only screen and (max-width: 600px) {
+    .formDiv {
+        text-align: center;
+        margin-left: 10%;
+    }
+  }

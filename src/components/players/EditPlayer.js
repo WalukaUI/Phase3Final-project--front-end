@@ -30,6 +30,7 @@ function EditPlayer({isOpen, setIsOpen, updateData, setUpdateData, updatePlayer 
                             <label >Name<input name="name" className="form-control form-control-sm" value={editPlayer.name} placeholder="Name" onChange={handleChangeData} /></label>
                             <label >Skill<input name="skill"  className="form-control form-control-sm" value={editPlayer.skill} placeholder="Price" onChange={handleChangeData} /></label>
                             <label >Age<input name="age" type="number" className="form-control form-control-sm" value={editPlayer.age} placeholder="Description" onChange={handleChangeData} /></label>
+                            <label >Image URL<input name="image_url"  className="form-control form-control-sm" value={editPlayer.image_url?editPlayer.image_url : "Not Available"} placeholder="Image" onChange={handleChangeData} /></label>
                             <label >Playing Category
                               <select className="form-select" name="playing_category" value={updateData.playing_category} aria-label="Default select example" onChange={handleChangeData} >
                                     <option value="T20">T20</option>
