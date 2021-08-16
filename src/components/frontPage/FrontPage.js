@@ -21,7 +21,7 @@ function FrontPage() {
         </div>
         <div className="cards">
           <img
-            className="card-img-top"
+            className="card-img-tops"
             src="https://cdn.iconscout.com/icon/premium/png-512-thumb/top-player-1673228-1420278.png"
             alt="Card image cap"
           />
