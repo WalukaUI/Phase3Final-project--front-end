@@ -6,7 +6,7 @@ function FrontPage() {
   return (
     <div >
               <a href="#" class="myButton">
-          Welcome to CrickUSA tournament Seriest
+          Welcome to CrickUSA cricket Tournament Series
         </a>
       <div className="mainDivfront">
         <div className="cards">
