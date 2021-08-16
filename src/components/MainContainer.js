@@ -8,7 +8,6 @@ import PlayerProfile from "./players/playerProfile/Player";
 import Teams from "./teams/Teams";
 import TeamPlayers from "./teams/TeamPlayers";
 import Tournaments from "./tournements/Tournements";
-import News from "./sportNews/News";
 import Schedule from "./Schedule/Schedule"
 
 function MainContainer() {
@@ -18,10 +17,10 @@ function MainContainer() {
            <div>
             <NavBar />
             <div className="row">
-              <div className="col-md-2 col-sm-2">
+              <div className="col-md-3 col-sm-12">
                 <Schedule />
               </div>
-              <div className="col-md-8 col-sm-10">
+              <div className="col-md-9 col-sm-12">
                 <Route exact path="/">
                   <FrontPage />
                 </Route>
@@ -40,9 +39,6 @@ function MainContainer() {
                 <Route path="/tournaments">
                   <Tournaments />
                 </Route>
-              </div>
-              <div className="col-md-2 col-sm-12">
-                <News />
               </div>
             </div>
             </div>
