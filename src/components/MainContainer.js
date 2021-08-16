@@ -20,7 +20,7 @@ function MainContainer() {
               <div className="col-md-3 col-sm-12">
                 <Schedule />
               </div>
-              <div className="col-md-9 col-sm-12">
+              <div className="col-md-9 col-sm-12" style={{paddingRight: "15px"}}>
                 <Route exact path="/">
                   <FrontPage />
                 </Route>
