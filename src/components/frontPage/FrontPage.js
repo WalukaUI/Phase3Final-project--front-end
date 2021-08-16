@@ -1,41 +1,43 @@
 import React from "react";
+import "./frontpage.css";
+import bat from "./batt.png";
 
 function FrontPage() {
   return (
-    <div>
-      <h3>Welcome to CrickUSA tournament Seriest</h3>
-      <div>
-        <div className="card" >
-          <img className="card-img-top" src="..." alt="Card image cap" />
+    <div >
+              <a href="#" class="myButton">
+          Welcome to CrickUSA tournament Seriest
+        </a>
+      <div className="mainDivfront">
+        <div className="cards">
+          <img
+            className="card-img-top"
+            src="https://bradleyjohnsonmemorialfoundation.org/wp-content/uploads/2013/01/icon_tournament.png"
+            alt="Card image cap"
+          />
           <div className="card-body">
-            <p className="card-text">
-            All the Players of the tournamen
-            </p>
+            <p className="card-text">View All the Tournaments and Teams of the Tournament</p>
           </div>
         </div>
-        <div className="card" >
-          <img className="card-img-top" src="..." alt="Card image cap" />
+        <div className="cards">
+          <img
+            className="card-img-top"
+            src="https://cdn.iconscout.com/icon/premium/png-512-thumb/top-player-1673228-1420278.png"
+            alt="Card image cap"
+          />
           <div className="card-body">
-            <p className="card-text">
-            All the Teams of the tournament
-            </p>
+            <p className="card-text">View and Edit All the Teams of the tournament</p>
           </div>
         </div>
-        <div className="card" >
-          <img className="card-img-top" src="..." alt="Card image cap" />
+        <div className="cards">
+          <img
+            className="card-img-top"
+            src="https://image.flaticon.com/icons/png/512/10/10552.png"
+            alt="Card image cap"
+          />
+
           <div className="card-body">
-            <p className="card-text">
-            All the Tournaments of the Season
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p className="card-text">View and Edit All the Players of the tournament</p>
           </div>
         </div>
       </div>
