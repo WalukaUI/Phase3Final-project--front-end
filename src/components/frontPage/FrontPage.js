@@ -1,11 +1,10 @@
 import React from "react";
 import "./frontpage.css";
-import bat from "./batt.png";
 
 function FrontPage() {
-  return (
-    <div >
-              <a href="#" class="myButton">
+  return <>
+  <div >
+              <a href="#" className="myButton">
           Welcome to CrickUSA cricket Tournament Series
         </a>
       <div className="mainDivfront">
@@ -42,7 +41,7 @@ function FrontPage() {
         </div>
       </div>
     </div>
-  );
+    </>
 }
 
 export default FrontPage;
