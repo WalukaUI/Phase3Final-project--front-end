@@ -14,11 +14,11 @@ function TournamentCard({ game }) {
     fetch(`${URL}/tournaments/${game.id}`, getrequestOptions)
       .then((res) => res.json())
       .then((game) => setTour(game));
-  }, []);
+  });
 
   const populatePtag = tour.map((a) => <p>{a.name}</p>);
 
-  return (
+  return <>
     <div className="card mainCard">
       <div className="card-header">
         <h4>{game.name}</h4>
@@ -38,7 +38,7 @@ function TournamentCard({ game }) {
         </div>
       </div>
     </div>
-  );
+    </>
 }
 
 export default TournamentCard;

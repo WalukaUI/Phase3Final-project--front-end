@@ -22,8 +22,7 @@ function PlayersCards({ card, deletePlayer, updatePlayer, idx }) {
   useEffect(() => {
     Aos.init({});
   }, []);
-  return (
-    <>
+  return <>
     <div className="grids" data-aos={idx>7?"fade-up":null}>
       {/* data-aos={idx>9?"fade-up":null} */}
       <div className="cardstyle">
@@ -66,7 +65,6 @@ function PlayersCards({ card, deletePlayer, updatePlayer, idx }) {
       />
       </div>
     </>
-  );
 }
 
 export default PlayersCards;

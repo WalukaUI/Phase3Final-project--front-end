@@ -16,7 +16,9 @@ function Tournaments(){
         fetch(`${URL}/tournaments`, getrequestOptions)
           .then((res) => res.json())
           .then((game) => setTournements(game));
-      }, []);
+      });
+
+
     
     const populateTournements=tournement.map((game)=>{
         return <TournamentCard game={game}  key={game.id}/>

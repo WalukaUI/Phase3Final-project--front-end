@@ -93,7 +93,7 @@ function Players() {
       />
     );
   });
-  return (
+  return <>
     <div>
       <div className="formDiv">
         <div>
@@ -174,6 +174,6 @@ function Players() {
 
       <div className="grids">{playerstoCard}</div>
     </div>
-  );
+  </>
 }
 export default Players;

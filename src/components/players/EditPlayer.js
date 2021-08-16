@@ -24,7 +24,7 @@ function EditPlayer({
   if (!updateData) return null;
   const editPlayer = updateData;
 
-  return isOpen ? (
+  return isOpen ? <>
     <div className="popup-box">
       <div className="popup-inner">
         <div className="formDiv div1">
@@ -111,9 +111,9 @@ function EditPlayer({
         </div>
       </div>
     </div>
-  ) : (
-    ""
-  );
+  </> : <div>{""}</div>
+    
+  
 }
 
 export default EditPlayer;

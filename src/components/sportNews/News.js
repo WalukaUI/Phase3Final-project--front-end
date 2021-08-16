@@ -1,7 +1,7 @@
 import React from "react"
 import ReactPlayer from 'react-player'
 
-const URL="https://www.youtube.com/watch?v=F0_aypvtW8Y"
+
 
 function News(){
 //   const[news,setNews]=useState()
