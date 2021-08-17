@@ -10,16 +10,16 @@ function FrontPage() {
           Welcome to CrickUSA cricket Tournament Series
         </a>
         <div className="mainDivfront">
-        <Link to={`/teams`}>
+          <Link to={`/teams`}>
             <div className="cards">
               <img
-                className="card-img-tops"
-                src="http://cdn.onlinewebfonts.com/svg/img_288547.png"
+                className="card-img-top"
+                src="https://overseasrealty.com/en/referrals/miscellanous-images/team.png/image_preview"
                 alt="Card_image_cap"
               />
-              <div className="card-body linktotabs">
+              <div className="card-body">
                 <p className="card-text">
-                  View and Edit All the Teams of the tournament
+                  View All the Tournaments and Teams of the Tournament
                 </p>
               </div>
             </div>
