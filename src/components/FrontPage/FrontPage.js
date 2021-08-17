@@ -19,7 +19,7 @@ function FrontPage() {
               />
               <div className="card-body">
                 <p className="card-text">
-                  View All the Tournaments and Teams of the Tournament
+                  View All Teams of the Tournament
                 </p>
               </div>
             </div>
