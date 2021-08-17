@@ -14,7 +14,7 @@ function TeamCard({ team, deleteTeam, updateTeam }) {
 
   function confirmDelete(e) {
     e.preventDefault();
-    deleteTeam(team.id);
+    // deleteTeam(team.id);
     setDeletewarning(!deletewarning);
   }
 
