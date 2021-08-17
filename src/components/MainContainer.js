@@ -1,13 +1,13 @@
 import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./mainContainer.css";
-import NavBar from "./navBar/NavBar";
-import FrontPage from "./frontPage/FrontPage";
-import Players from "./players/Players";
-import PlayerProfile from "./players/playerProfile/Player";
-import Teams from "./teams/Teams";
-import TeamPlayers from "./teams/TeamPlayers";
-import Tournaments from "./tournements/Tournements";
+import NavBar from "./NavBar/NavBar";
+import FrontPage from "./FrontPage/FrontPage";
+import Players from "./Players/Players";
+import PlayerProfile from "./Players/playerProfile/Player";
+import Teams from "./Teams/Teams";
+import TeamPlayers from "./Teams/TeamPlayers/TeamPlayers";
+import Tournaments from "./Tournements/Tournements";
 import Rankings from "./Rankings/Rankings"
 
 function MainContainer() {

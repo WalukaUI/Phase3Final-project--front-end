@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { URL } from "../../constraints/URL"
+import { URL } from "../../../constraints/URL"
 import { useParams } from "react-router-dom";
 import "./teamPlayers.css";
 import TeamPlayer from "./TeamPlayer"

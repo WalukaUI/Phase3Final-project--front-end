@@ -1,7 +1,7 @@
 import React from "react"
 import img2 from "./ranking.jpg";
 import "./Ranking.css"
-import News from "../sportNews/News";
+import News from "../SportNews/News";
 
 function Rankings(){
     return <div>

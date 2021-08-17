@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./teamCard.css";
-import EditTeam from "./EditTeam";
+import EditTeam from "./EditTeam/EditTeam";
 
 function TeamCard({ team, deleteTeam, updateTeam }) {
   const [isOpen, setIsOpen] = useState(false);

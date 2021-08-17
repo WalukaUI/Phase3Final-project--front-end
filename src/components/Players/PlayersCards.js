@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../players/players.css";
-import EditPlayer from "./EditPlayer";
+import "./players.css";
+import EditPlayer from "./EditPlayer/EditPlayer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
