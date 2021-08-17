@@ -3,7 +3,7 @@ import "./players.css";
 import "./PlayersCards";
 import PlayersCards from "./PlayersCards";
 
-const URL = "http://127.0.0.1:9393";
+const URL = "https://limitless-wave-33152.herokuapp.com";
 
 function Players() {
   const [allPlayers, setAllPlayers] = useState([]);

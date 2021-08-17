@@ -16,7 +16,7 @@ function Tournaments(){
         fetch(`${URL}/tournaments`, getrequestOptions)
           .then((res) => res.json())
           .then((game) => setTournements(game));
-      });
+      },[]);
 
 
     
