@@ -33,7 +33,7 @@ function PlayersCards({ card, deletePlayer, updatePlayer, idx }) {
               className="card-img-top"
               alt="..."
             />
-            <h5 className="card-title">{card.name}</h5>
+            <h5 className="card-title playerName">{card.name}</h5>
           </div>
           <div className="flip-card-back">
             <div className="card-body">

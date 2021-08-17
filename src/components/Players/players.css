@@ -4,16 +4,14 @@
 }
 .cardstyle{
     opacity: 0.9;
-    display: flex;
+    position: relative;
     text-align: center;
     margin: 20px;
-    /* margin-top: 150px; */
     background-color: transparent;
-    height: 38vh;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,3);
     border-radius: 5%;
-    perspective: 1000px;
 }
+
 .cardstyle:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
@@ -41,7 +39,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
@@ -69,9 +66,10 @@
 .formDiv{
    margin-left: 1%;
 }
-/* .card-img-top{
-    border-radius: 50%;
-} */
+.playerName{
+    position: absolute;
+    bottom: 0px;
+}
 @media only screen and (max-width: 600px) {
     .formDiv {
         text-align: center;

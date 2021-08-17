@@ -1,27 +1,24 @@
 .cards{
     justify-content: center;
     opacity: 0.9;
-    width: 300px;
+    width: 280px;
     display: block;
     text-align: center;
     margin: 20px;
     background-color:bisque;
-    height: 38vh;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,3);
     border-radius: 5%;
-    perspective: 1000px;
-    height: 50%;
-    
+    height: 100%;
 }
 .card-img-tops{
     width: 200px;
+    padding-top: 40%;
 }
 
 .mainDivfront{
     width: 100%;
     justify-content: center;
     display: flex;
-    padding-top: 10%;
 }
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -39,3 +36,9 @@
     text-decoration: none;
  
 }
+
+@media (max-width: 600px) {
+   .cards{
+       display: inline-block;
+   }
+  }
