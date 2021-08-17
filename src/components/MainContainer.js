@@ -8,7 +8,7 @@ import PlayerProfile from "./players/playerProfile/Player";
 import Teams from "./teams/Teams";
 import TeamPlayers from "./teams/TeamPlayers";
 import Tournaments from "./tournements/Tournements";
-import Schedule from "./Schedule/Schedule"
+import Rankings from "./Rankings/Rankings"
 
 function MainContainer() {
   return <>
@@ -18,7 +18,7 @@ function MainContainer() {
             <NavBar />
             <div className="row">
               <div className="col-md-3 col-sm-12">
-                <Schedule />
+                <Rankings />
               </div>
               <div className="col-md-9 col-sm-12" style={{paddingRight: "15px"}}>
                 <Route exact path="/">

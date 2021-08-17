@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { URL } from "../../../constraints/URL"
 import { useParams } from "react-router-dom";
 import "./player.css";
-
-const URL = "http://127.0.0.1:9393/";
 
 function PlayerProfile() {
   const [singlePlayer, setsinglePlayer] = useState([]);
@@ -14,11 +13,11 @@ function PlayerProfile() {
   }, [params.id]);
   
   return <> 
-      <div className="row">
-        <div className="col-xl-3 col-md-12 seconddiv inner1">
+      <div className="row playersMainDiv">
+        <div className="col-xl-3 col-md-12 inner1">
           <div className="m-b-25">
             <img
-              src="https://img.icons8.com/bubbles/100/000000/user.png"
+              src={singlePlayer.image_url}
               className="img-radius"
               alt="User-Profile"
             />
@@ -28,7 +27,7 @@ function PlayerProfile() {
           <p>{singlePlayer.age}</p>
           <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
         </div>
-        <div className="col-xl-9 col-md-12 seconddiv">
+        <div className="col-xl-9 col-md-12 seconddiv ">
           <div className="row">
             <div className="col-xl-6 col-md-6 col-sm-12">
               <h6 className="b-b-default">Information</h6>
