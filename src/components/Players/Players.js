@@ -147,10 +147,10 @@ function Players() {
                 onChange={handleAddPlayer}
               >
                 <option value="select">Select</option>
-                <option value="17">SL</option>
-                <option value="18">IND</option>
-                <option value="19">AUS</option>
-                <option value="20">PAK</option>
+                <option value="1">SL</option>
+                <option value="2">IND</option>
+                <option value="3">AUS</option>
+                <option value="4">PAK</option>
               </select>
             </label>
             <label className="text-white">

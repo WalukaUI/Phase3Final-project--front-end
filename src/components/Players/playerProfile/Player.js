@@ -42,8 +42,8 @@ function PlayerProfile() {
               <div className="smallBox">
               <h6 className="b-b-default">Status</h6>
                 <p className="m-b-10 f-w-600">Matches: 104</p>
-                <p className="m-b-10 f-w-600">Runs: 2544</p>
-                <p className="m-b-10 f-w-600">Wickets: 25</p>
+                <p className="m-b-10 f-w-600">Runs: {singlePlayer.runs}</p>
+                <p className="m-b-10 f-w-600">Wickets: {singlePlayer.wikets}</p>
               </div>
             </div>
             <div className="col-xl-6 col-md-6 col-sm-12 logoDiv">
