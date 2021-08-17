@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { URL } from "../../constraints/URL"
 import TournamentCard from "./TounarmenrCard"
 import "./tournements.css"
-
-const URL = "http://127.0.0.1:9393";
 
 function Tournaments(){
     const [tournement, setTournements]=useState([])

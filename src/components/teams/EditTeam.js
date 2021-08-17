@@ -1,3 +1,4 @@
+import React from "react";
 import "./EditTeam.css";
 
 function EditPlayer({

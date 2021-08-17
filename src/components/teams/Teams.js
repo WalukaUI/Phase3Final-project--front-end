@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { URL } from "../../constraints/URL"
 import "./teams.css";
 import "./EditTeam.css";
 import TeamCard from "./TeamCard";
 
-const URL = "http://127.0.0.1:9393/";
 
 function Teams() {
   const [teams, setTeams] = useState([]);

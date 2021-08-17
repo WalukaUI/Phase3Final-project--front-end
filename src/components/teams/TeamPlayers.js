@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { URL } from "../../constraints/URL"
 import { useParams } from "react-router-dom";
 import "./teamPlayers.css";
 import TeamPlayer from "./TeamPlayer"
 
-const URL = "http://127.0.0.1:9393/";
 function TeamPlayers() {
   const [players, setplayers] = useState([]);
   const params = useParams();
