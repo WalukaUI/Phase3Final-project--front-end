@@ -11,7 +11,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="!#">
+      <a className="navbar-brand topic" href="!#">
         CrickUSA
       </a>
       <button
@@ -51,7 +51,7 @@ function NavBar() {
         </ul>
         
       </div>
-      <img style={imgstyle} src="https://c.tenor.com/DBYx-E6apBwAAAAM/ball-on-fire-spinning.gif" alt="logo"/>
+      <img  className="navImage" style={imgstyle} src="https://c.tenor.com/DBYx-E6apBwAAAAM/ball-on-fire-spinning.gif" alt="logo"/>
     </nav>
   );
 }
