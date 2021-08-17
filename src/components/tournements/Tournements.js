@@ -7,16 +7,15 @@ const URL = "http://127.0.0.1:9393";
 function Tournaments(){
     const [tournement, setTournements]=useState([])
      
-    let getrequestOptions = {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    };
-
     useEffect(() => {
+      let getrequestOptions = {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      };
         fetch(`${URL}/tournaments`, getrequestOptions)
           .then((res) => res.json())
           .then((game) => setTournements(game));
-      });
+      },[]);
 
 
     

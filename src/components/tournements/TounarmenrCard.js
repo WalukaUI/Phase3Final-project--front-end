@@ -5,16 +5,15 @@ function TournamentCard({ game }) {
 
   const [tour, setTour] = useState([]);
 
-  let getrequestOptions = {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  };
-
   useEffect(() => {
+    let getrequestOptions = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
     fetch(`${URL}/tournaments/${game.id}`, getrequestOptions)
       .then((res) => res.json())
       .then((game) => setTour(game));
-  });
+  },[game.id]);
 
   const populatePtag = tour.map((a) => <p>{a.name}</p>);
 
