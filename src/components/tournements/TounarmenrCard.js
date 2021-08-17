@@ -14,7 +14,7 @@ function TournamentCard({ game }) {
     fetch(`${URL}/tournaments/${game.id}`, getrequestOptions)
       .then((res) => res.json())
       .then((game) => setTour(game));
-  },[]);
+  });
 
   const populatePtag = tour.map((a) => <p>{a.name}</p>);
 
