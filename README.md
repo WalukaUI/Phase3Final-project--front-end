@@ -1,8 +1,8 @@
------CrickUSA tournement manager----
+⚾-----CrickUSA tournement manager----⚾
 
 https://crickusa-series.netlify.app/
 
-<<<MVC>>>
+💻......MVC......💻
 
 >> * Check all the players 
 >> * All teams
